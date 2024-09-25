@@ -3,10 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BackendTemplate.Controllers.AuthController
 {
-  [Route("api/[controller]")]
+  [Route("api/[user-management]")]
   [ApiController]
   public class AuthController : ControllerBase
   {
+
 
   }
 }

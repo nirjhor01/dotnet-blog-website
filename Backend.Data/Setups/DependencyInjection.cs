@@ -21,6 +21,7 @@ namespace Backend.Data.Setups
 
       services.AddScoped<IApplicationDbContext>(provider => provider.GetRequiredService<EFDbContext>());
       services.AddScoped<ITransactionUtil, TransactionUtil>();
+
       return services;
     }
   }
