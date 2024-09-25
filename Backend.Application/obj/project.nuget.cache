@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "4GYV3TlNtgRTNmgZrt32FfLC9LzmgJJA1WXFEVCo4eTD9RWgEER7+H4Ogc0TWztBGMv0FJLVRoJQ8TH8pa1fFQ==",
+  "dgSpecHash": "2RYo0TWC2ML8wVJAsQjVFzURbUdiRmzYYwy29jSElhgUVPjQG1xKtXpuyJrslNIRH9+2M4g3bjsyWxlfw195Ag==",
   "success": true,
   "projectFilePath": "C:\\Users\\TN-99349\\Desktop\\BackendTemplate\\Backend.Application\\Backend.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\TN-99349\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\TN-99349\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\TN-99349\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",
+    "C:\\Users\\TN-99349\\.nuget\\packages\\bcrypt.net-next\\4.0.3\\bcrypt.net-next.4.0.3.nupkg.sha512",
     "C:\\Users\\TN-99349\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
     "C:\\Users\\TN-99349\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.8\\microsoft.aspnetcore.authentication.jwtbearer.8.0.8.nupkg.sha512",
     "C:\\Users\\TN-99349\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\6.0.0\\microsoft.bcl.asyncinterfaces.6.0.0.nupkg.sha512",

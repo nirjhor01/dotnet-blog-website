@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("BackendTemplate")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+52d8f8851dbb79017dc3b7391b76ff85a84490fa")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+eda78da17220aff06a19274a2dab7c6ec2249099")]
 [assembly: System.Reflection.AssemblyProductAttribute("BackendTemplate")]
 [assembly: System.Reflection.AssemblyTitleAttribute("BackendTemplate")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
