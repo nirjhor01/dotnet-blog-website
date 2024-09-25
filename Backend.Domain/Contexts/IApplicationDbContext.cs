@@ -12,7 +12,7 @@ namespace Backend.Domain.Contexts
 {
   public interface IApplicationDbContext : IInfrastructure<IServiceProvider>
   {
-    DatabaseFacade DatabaseFacade { get; }
+    DatabaseFacade Database { get; }
     #region DbSets
     DbSet<User> Users { get; set; }
     #endregion DbSets
