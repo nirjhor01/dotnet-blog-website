@@ -11,7 +11,7 @@ namespace Backend.Domain.Entities
 {
   [Table("Category", Schema = "dbo")]
   //[Index("Name", IsUnique = true, = "Category_Route")]
-  public class Category
+  public class Category : BaseEntity
   {
     public Category()
     {

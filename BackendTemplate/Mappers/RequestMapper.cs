@@ -9,6 +9,7 @@ namespace BackendTemplate.Mappers
     public RequestMapper()
     {
       CreateMap<UserRequest, User>();
+      CreateMap<CategoryRequest, Category>();
     }
   }
 }

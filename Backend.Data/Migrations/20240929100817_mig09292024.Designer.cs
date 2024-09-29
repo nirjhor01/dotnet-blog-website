@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Backend.Data.Migrations
 {
     [DbContext(typeof(EFDbContext))]
-    [Migration("20240929043135_init")]
-    partial class init
+    [Migration("20240929100817_mig09292024")]
+    partial class mig09292024
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -33,8 +33,20 @@ namespace Backend.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime")
+                        .HasColumnName("CreatedOn");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDeleted");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedOn")
+                        .HasColumnType("datetime")
+                        .HasColumnName("UpdatedOn");
 
                     b.HasKey("Id");
 

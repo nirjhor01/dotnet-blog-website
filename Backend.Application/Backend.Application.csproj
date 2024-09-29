@@ -10,8 +10,6 @@
     <Folder Include="AppSettings\" />
     <Folder Include="Caches\" />
     <Folder Include="CustomValidators\" />
-    <Folder Include="Dto\" />
-    <Folder Include="Interfaces\" />
   </ItemGroup>
 
   <ItemGroup>

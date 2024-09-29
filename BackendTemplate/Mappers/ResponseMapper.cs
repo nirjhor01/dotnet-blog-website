@@ -10,6 +10,8 @@ namespace BackendTemplate.Mappers
     public ResponseMapper()
     {
       CreateMap<User, UserResponse>();
+      CreateMap<User, UserLoginResponse>();
+      CreateMap<Category, CategoryResponse>();
     }
   }
 }

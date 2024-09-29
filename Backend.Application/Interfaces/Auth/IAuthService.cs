@@ -10,10 +10,12 @@ namespace Backend.Application.Interfaces.Auth
 {
   public interface IAuthService
   {
+    #region Login
     Task<UserLoginResponse> Login(LoginRequest loginRequest);
+    #endregion Login
 
     #region Save
-    Task<UserLoginResponse> Register(UserRequest request);
+    Task<UserResponse> Register(UserRequest request);
     #endregion Save
   }
 }

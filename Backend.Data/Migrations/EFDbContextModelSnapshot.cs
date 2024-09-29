@@ -30,8 +30,20 @@ namespace Backend.Data.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime")
+                        .HasColumnName("CreatedOn");
+
+                    b.Property<bool>("IsDeleted")
+                        .HasColumnType("bit")
+                        .HasColumnName("IsDeleted");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("UpdatedOn")
+                        .HasColumnType("datetime")
+                        .HasColumnName("UpdatedOn");
 
                     b.HasKey("Id");
 

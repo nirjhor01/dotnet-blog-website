@@ -92,7 +92,12 @@ namespace Backend.Service
 
       return response;
     }
-
+    public async Task<UserLoginResponse> GetUserByEmail(string email)
+    {
+      var user = await _authRepository.userLoginAsync(email);
+      var response = _mapper.Map<UserLoginResponse>(user);
+      return response;
+    }
     private async Task ValidateRequest(UserRequest userRequest)
     {
       var response = await GetUserByEmail(userRequest.Email);
@@ -106,21 +111,16 @@ namespace Backend.Service
       }
     }
 
-    public async Task<UserLoginResponse> Register(UserRequest request)
+    public async Task<UserResponse> Register(UserRequest request)
     {
       await ValidateRequest(request);
 
       var user = _mapper.Map<User>(request);
       var savedUser = await _authRepository.userRegisterAsync(user);
-      var userRes = _mapper.Map<UserLoginResponse>(savedUser);
-      userRes.Token = GenerateToken(userRes, user.Id, 1);
+      var userRes = _mapper.Map<UserResponse>(savedUser);
+      //userRes.Token = GenerateToken(userRes, user.Id, 1);
       return userRes;
     }
-    public async Task<UserLoginResponse> GetUserByEmail(string email)
-    {
-      var user = await _authRepository.userLoginAsync(email);
-      var response = _mapper.Map<UserLoginResponse>(user);
-      return response;
-    }
+  
   }
 }
