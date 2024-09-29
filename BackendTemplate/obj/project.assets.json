@@ -1632,6 +1632,45 @@
         "runtime": {
           "bin/placeholder/Backend.Domain.dll": {}
         }
+      },
+      "Backend.Repo/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "BCrypt.Net-Next": "4.0.3",
+          "Backend.Application": "1.0.0",
+          "Backend.Data": "1.0.0",
+          "Backend.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
+          "Microsoft.EntityFrameworkCore": "8.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Backend.Repo.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Backend.Repo.dll": {}
+        }
+      },
+      "Backend.Service/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "AutoMapper": "13.0.1",
+          "BCrypt.Net-Next": "4.0.3",
+          "Backend.Application": "1.0.0",
+          "Backend.Domain": "1.0.0",
+          "Microsoft.AspNetCore.Authentication.JwtBearer": "8.0.8",
+          "Microsoft.EntityFrameworkCore": "8.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "8.0.8"
+        },
+        "compile": {
+          "bin/placeholder/Backend.Service.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Backend.Service.dll": {}
+        }
       }
     }
   },
@@ -4373,6 +4412,16 @@
       "type": "project",
       "path": "../Backend.Domain/Backend.Domain.csproj",
       "msbuildProject": "../Backend.Domain/Backend.Domain.csproj"
+    },
+    "Backend.Repo/1.0.0": {
+      "type": "project",
+      "path": "../Backend.Repo/Backend.Repo.csproj",
+      "msbuildProject": "../Backend.Repo/Backend.Repo.csproj"
+    },
+    "Backend.Service/1.0.0": {
+      "type": "project",
+      "path": "../Backend.Service/Backend.Service.csproj",
+      "msbuildProject": "../Backend.Service/Backend.Service.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -4382,6 +4431,8 @@
       "Backend.Application >= 1.0.0",
       "Backend.Data >= 1.0.0",
       "Backend.Domain >= 1.0.0",
+      "Backend.Repo >= 1.0.0",
+      "Backend.Service >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.8",
       "Microsoft.EntityFrameworkCore >= 8.0.8",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.8",
@@ -4425,6 +4476,12 @@
             },
             "C:\\Users\\TN-99349\\Desktop\\BackendTemplate\\Backend.Domain\\Backend.Domain.csproj": {
               "projectPath": "C:\\Users\\TN-99349\\Desktop\\BackendTemplate\\Backend.Domain\\Backend.Domain.csproj"
+            },
+            "C:\\Users\\TN-99349\\Desktop\\BackendTemplate\\Backend.Repo\\Backend.Repo.csproj": {
+              "projectPath": "C:\\Users\\TN-99349\\Desktop\\BackendTemplate\\Backend.Repo\\Backend.Repo.csproj"
+            },
+            "C:\\Users\\TN-99349\\Desktop\\BackendTemplate\\Backend.Service\\Backend.Service.csproj": {
+              "projectPath": "C:\\Users\\TN-99349\\Desktop\\BackendTemplate\\Backend.Service\\Backend.Service.csproj"
             }
           }
         }

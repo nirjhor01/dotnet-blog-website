@@ -13,8 +13,13 @@ namespace Backend.Domain.Contexts
   public interface IApplicationDbContext : IInfrastructure<IServiceProvider>
   {
     DatabaseFacade Database { get; }
+
     #region DbSets
-    DbSet<User> Users { get; set; }
+     DbSet<User> Users { get; set; }
+     DbSet<Category> Categories { get; set; }
+     DbSet<Post> Posts { get; set; }
+     DbSet<PostCategory> PostCategories { get; set; }
+
     #endregion DbSets
 
     #region Methods

@@ -1,0 +1,15 @@
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\bin\Debug\net8.0\Backend.Cache.deps.json
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\bin\Debug\net8.0\Backend.Cache.runtimeconfig.json
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\bin\Debug\net8.0\Backend.Cache.dll
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\bin\Debug\net8.0\Backend.Cache.pdb
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.csproj.AssemblyReference.cache
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.AssemblyInfoInputs.cache
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.AssemblyInfo.cs
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.csproj.CoreCompileInputs.cache
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.sourcelink.json
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.dll
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\refint\Backend.Cache.dll
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.pdb
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\Backend.Cache.genruntimeconfig.cache
+C:\Users\TN-99349\Desktop\BackendTemplate\Backend.Cache\obj\Debug\net8.0\ref\Backend.Cache.dll

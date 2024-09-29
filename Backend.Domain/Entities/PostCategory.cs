@@ -14,13 +14,13 @@ namespace Backend.Domain.Entities
     [Column("Id")]
     public int Id { get; set; }
 
-    [ForeignKey("cat")]
+    [ForeignKey("Category")]
     public int CategoryId { get; set; }
-    //[ForeignKey("post")]
+    [ForeignKey("Post")]
     public int PostId { get; set; }
 
-    public Category cat { get; set; }
-    public Post post { get; set; }
+    public Category Category { get; set; }
+    public Post Post { get; set; }
 
   }
 }

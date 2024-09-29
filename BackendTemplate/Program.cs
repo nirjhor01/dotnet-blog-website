@@ -1,5 +1,6 @@
 using Backend.Data.Setups;
 using BackendTemplate.DependencyExtensions;
+using BackendTemplate.Mappers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,16 +12,20 @@ builder.Services.AddPersistence(connectionString);
 
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.AddSettings();
 builder.AddJWTAuthentication();
-builder.Services.AddSwaggerGen();
-
+builder.AddSwagger();
+builder.Services.AddCorsPolicy();
+builder.Services.AddServices();
+builder.Services.AddRepositories();
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 
+//builder.Services.AddAutoMapper(typeof(DefaultProfile), typeof(RequestMapper), typeof(ResponseMapper));
+//builder.Services.AddSwaggerGen();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction())
 {
   app.UseSwagger();
   app.UseSwaggerUI();

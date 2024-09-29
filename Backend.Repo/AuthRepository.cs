@@ -1,4 +1,8 @@
-﻿using System;
+using Backend.Data;
+using Backend.Domain.Entities;
+using Backend.Domain.Interfaces;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,7 +10,39 @@ using System.Threading.Tasks;
 
 namespace Backend.Repo
 {
-  internal class AuthRepository
+  public class AuthRepository : BaseRepository<User>, IAuthRepository
   {
+    private readonly EFDbContext _db;
+    public AuthRepository(EFDbContext db) : base(db)
+    {
+      _db = db;
+    }
+    public async Task<User> userLoginAsync(string email)
+    {
+      return await _db.Users.FirstOrDefaultAsync(u => u.Email == email) ;
+    }
+
+
+
+    public async Task<User> userRegisterAsync(User user)
+    {
+      await _db.Users.AddAsync(user);
+      await _db.SaveChangesAsync();
+      return user;
+    }
+
+
+    public async Task<User> UpdateUserByEmailAsync(User updatedUser)
+    {
+      var user = await _db.Users.FirstOrDefaultAsync(u => u.Email == updatedUser.Email);
+
+      user.Password = updatedUser.Password;
+
+      _db.Users.Update(user);
+      await _db.SaveChangesAsync();
+      return user;
+    }
+
+
   }
 }
