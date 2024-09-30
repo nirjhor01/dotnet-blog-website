@@ -25,7 +25,7 @@ namespace BackendTemplate.Controllers.Category
     #region SAVE
     [HttpPost]
     [Route("category")]
-    [AllowAnonymous]
+    [Authorize]
     [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CategoryResponse))]
     public async Task<IActionResult> AddCategory([FromBody] CategoryRequest categoryRequest)
     {
@@ -34,5 +34,27 @@ namespace BackendTemplate.Controllers.Category
     }
     #endregion SAVE
 
+    #region Update
+    [HttpPut]
+    [Route("category")]
+    [Authorize]
+    public async Task<IActionResult> UpdateCategory([FromBody] CategoryRequest categoryRequest, int id)
+    {
+      var res = await _categoryService.UpdateCategory(categoryRequest, id);
+      return Ok(res);
+    }
+
+    #endregion Update
+
+    #region Delete
+    [HttpDelete]
+    [Route("category")]
+    [Authorize]
+    public async Task<IActionResult> DeleteCategory(int id)
+    {
+      var res = await _categoryService.DeleteCategory(id);
+      return Ok(res);
+    }
+    #endregion Delete
   }
 }

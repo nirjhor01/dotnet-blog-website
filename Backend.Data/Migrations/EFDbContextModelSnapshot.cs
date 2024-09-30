@@ -41,6 +41,12 @@ namespace Backend.Data.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Route")
+                        .IsRequired()
+                        .HasMaxLength(128)
+                        .HasColumnType("nvarchar(128)")
+                        .HasColumnName("Route");
+
                     b.Property<DateTime>("UpdatedOn")
                         .HasColumnType("datetime")
                         .HasColumnName("UpdatedOn");

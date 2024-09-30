@@ -1,4 +1,5 @@
 using AutoMapper;
+using Backend.Application.CustomExceptions;
 using Backend.Application.Dto.Request;
 using Backend.Application.Dto.Response;
 using Backend.Application.Interfaces.Categories;
@@ -22,6 +23,22 @@ namespace Backend.Service.Categories
         _mapper = mapper;
 
     }
+    #region Private
+    private async Task<Category> ValidateCategoryUpdateRequest(int id)
+    {
+      var existedCategory = await _categoryRepository.GetByIdAsync(id);
+      if(existedCategory == null)
+      {
+        throw new ClientCustomException("Category not found", new()
+                {
+                    {"Id", "Category Id is not valid." }
+                });
+      }
+      return existedCategory;
+      
+    }
+    #endregion Private
+    #region Save
     public async Task<CategoryResponse> AddCategory(CategoryRequest categoryRequest, int createdBy)
     {
       var categoryEntity = _mapper.Map<Category>(categoryRequest);
@@ -30,11 +47,28 @@ namespace Backend.Service.Categories
       var res = _mapper.Map<CategoryResponse>(categoryEntity);
       return res;
     }
+    #endregion Save
 
-    public Task<CategoryResponse> DeleteCategory(int id)
+    #region Delete
+    public async Task<CategoryResponse> DeleteCategory(int id)
     {
-      throw new NotImplementedException();
+      var res = await ValidateCategoryUpdateRequest(id);
+      var findTagetedCategoryEntity = await _categoryRepository.GetByIdAsync(id);
+      if (findTagetedCategoryEntity is null)
+      {
+        throw new ClientCustomException("Category not found", new()
+                {
+                    {"Id", "Category Id is not valid." }
+                });
+      }
+      //var MappedResponse = _mapper.Map<Category>(findTagetedCategoryEntity);
+      await _categoryRepository.DeleteAsync(findTagetedCategoryEntity);
+      await _categoryRepository.SaveChangesAsync();
+      var deletedCategoryResponse = _mapper.Map<CategoryResponse>(findTagetedCategoryEntity);
+      return deletedCategoryResponse;
+
     }
+    #endregion Delete
 
     public Task<CategoryResponse> GetAllCategories()
     {
@@ -45,10 +79,18 @@ namespace Backend.Service.Categories
     {
       throw new NotImplementedException();
     }
-
-    public Task<CategoryResponse> UpdateCategory(CategoryRequest categoryRequest, int id)
+    #region Update
+    public async Task<CategoryResponse> UpdateCategory(CategoryRequest categoryRequest, int id)
     {
-      throw new NotImplementedException();
+      var res = await ValidateCategoryUpdateRequest(id);
+      res.Name = categoryRequest.Name ?? res.Name;
+      res.Route = categoryRequest.Route ?? res.Route;
+      await _categoryRepository.UpdateAsync(res);
+      await _categoryRepository.SaveChangesAsync();
+      var response = _mapper.Map<CategoryResponse>(res);
+      return response;
+
     }
+    #endregion Update
   }
 }

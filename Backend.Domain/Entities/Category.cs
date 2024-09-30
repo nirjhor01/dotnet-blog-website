@@ -20,6 +20,10 @@ namespace Backend.Domain.Entities
     [Key]
     public int Id { get; set; }
     public string? Name { get; set; }
+    [Required]
+    [MaxLength(128)]
+    [Column("Route")]
+    public string? Route { get; set; }
     public virtual ICollection<PostCategory> PostCategories { get; set; }
   }
 }
