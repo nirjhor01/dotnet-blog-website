@@ -1,7 +1,9 @@
 using Backend.Domain.Categories;
 using Backend.Domain.Interfaces;
+using Backend.Domain.Interfaces.Posts;
 using Backend.Repo;
 using Backend.Repo.Categories;
+using Backend.Repo.Posts;
 
 namespace BackendTemplate.DependencyExtensions
 {
@@ -11,6 +13,7 @@ namespace BackendTemplate.DependencyExtensions
     {
       services.AddScoped<IAuthRepository, AuthRepository>();
       services.AddScoped<ICategoryRepository, CategoryRepository>();
+      services.AddScoped<IPostRepository, PostRepository>();
     }
   }
 }

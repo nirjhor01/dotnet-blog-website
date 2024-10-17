@@ -32,5 +32,10 @@ namespace Backend.Domain.Interfaces
     Task DeleteAsync(T entity);
     Task RemoveRangeAsync(IEnumerable<T> entities, CancellationToken cancellationToken = default);
     #endregion Delete
+
+    #region SOFT-DELETE
+    Task SoftDeleteAsync(T entity);
+    Task RestoreDeleteAsync(T entity);
+    #endregion SOFT-DELETE
   }
 }

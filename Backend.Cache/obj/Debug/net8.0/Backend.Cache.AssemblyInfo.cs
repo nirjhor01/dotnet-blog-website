@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Backend.Cache")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0f7f5fa53db4dbe5ab50e8c2106ae220b922126")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+54da7aad2c353b5e535ecbe709868294a7679db1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Backend.Cache")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Backend.Cache")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

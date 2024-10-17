@@ -96,6 +96,26 @@ namespace Backend.Repo
       await _context.SaveChangesAsync(cancellationToken);
     }
 
+  
+
     #endregion DELETE METHOD
+
+    #region SOFT-DELETE
+    public async Task SoftDeleteAsync(T entity)
+    {
+      entity.IsDeleted = true;
+      entity.UpdatedOn = DateTime.UtcNow;
+      _context.Set<T>().Update(entity);
+      await _context.SaveChangesAsync();
+
+    }
+    public async Task RestoreDeleteAsync(T entity)
+    {
+      entity.IsDeleted = false;
+      entity.UpdatedOn = DateTime.UtcNow;
+      _context.Set<T>().Update(entity);
+      await _context.SaveChangesAsync();
+    }
+    #endregion SOFT-DELETE
   }
- }
+}

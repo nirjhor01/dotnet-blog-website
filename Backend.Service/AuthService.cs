@@ -117,6 +117,7 @@ namespace Backend.Service
 
       var user = _mapper.Map<User>(request);
       var savedUser = await _authRepository.userRegisterAsync(user);
+
       var userRes = _mapper.Map<UserResponse>(savedUser);
       //userRes.Token = GenerateToken(userRes, user.Id, 1);
       return userRes;

@@ -1,5 +1,6 @@
 using Backend.Application.Interfaces.Auth;
 using Backend.Application.Interfaces.Categories;
+using Backend.Application.Interfaces.Posts;
 using Backend.Service;
 using Backend.Service.Categories;
 
@@ -15,6 +16,9 @@ namespace BackendTemplate.DependencyExtensions
       #region C
       services.AddScoped<ICategoryService, CategoryService>();
       #endregion C
+      #region P
+      services.AddScoped<IPostService, PostService>();
+      #endregion P
     }
   }
 }

@@ -10,6 +10,7 @@ namespace BackendTemplate.Mappers
     {
       CreateMap<UserRequest, User>();
       CreateMap<CategoryRequest, Category>();
+      CreateMap<PostRequest, Post>();
     }
   }
 }

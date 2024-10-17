@@ -10,7 +10,7 @@ namespace BackendTemplate.DependencyExtensions
       #region SeriLogger
       builder.Services.AddSwaggerGen(opt =>
       {
-        opt.SwaggerDoc("v1", new OpenApiInfo { Title = "TechnonextDocs", Version = "v1" });
+        opt.SwaggerDoc("v1", new OpenApiInfo { Title = "BackendTemplate", Version = "v1" });
         opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
         {
           In = ParameterLocation.Header,
