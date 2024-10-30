@@ -31,6 +31,16 @@ namespace BackendTemplate.Controllers.Post
     }
     #endregion SAVE
 
+    #region Update
+    [HttpPost]
+    [Route("post")]
+    public async Task<IActionResult> UpdatePosts(int id, [FromBody] PostRequest request)
+    {
+       var res = await _postService.UpdatePosts(request, id);
+      return Ok(res);
+    }
+    #endregion Update
+
     #region Delete
     [HttpDelete]
     [Route("post")]
