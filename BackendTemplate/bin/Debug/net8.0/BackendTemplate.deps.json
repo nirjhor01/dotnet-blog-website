@@ -909,12 +909,6 @@
       "System.Text.Json/8.0.4": {
         "dependencies": {
           "System.Text.Encodings.Web": "8.0.0"
-        },
-        "runtime": {
-          "lib/net8.0/System.Text.Json.dll": {
-            "assemblyVersion": "8.0.0.0",
-            "fileVersion": "8.0.724.31311"
-          }
         }
       },
       "System.Threading.Channels/6.0.0": {},
@@ -949,7 +943,10 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "Backend.Application.dll": {}
+          "Backend.Application.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Backend.Data/1.0.0": {
@@ -963,7 +960,10 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "Backend.Data.dll": {}
+          "Backend.Data.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Backend.Domain/1.0.0": {
@@ -976,7 +976,10 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "Backend.Domain.dll": {}
+          "Backend.Domain.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Backend.Repo/1.0.0": {
@@ -992,7 +995,10 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "Backend.Repo.dll": {}
+          "Backend.Repo.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       },
       "Backend.Service/1.0.0": {
@@ -1007,7 +1013,10 @@
           "Newtonsoft.Json": "13.0.3"
         },
         "runtime": {
-          "Backend.Service.dll": {}
+          "Backend.Service.dll": {
+            "assemblyVersion": "1.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

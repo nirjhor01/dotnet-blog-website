@@ -8,10 +8,10 @@ namespace BackendTemplate.DependencyExtensions
       {
         options.AddPolicy(name: "CorsPolicy", policy =>
         {
-          policy.AllowAnyOrigin()
-              .AllowAnyMethod()
-              .AllowAnyHeader()
-              .WithExposedHeaders("X-Pagination");
+            policy.AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .WithExposedHeaders("X-Pagination");
         });
       });
     }

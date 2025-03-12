@@ -32,7 +32,7 @@ namespace BackendTemplate.Controllers.Post
     #endregion SAVE
 
     #region Update
-    [HttpPost]
+    [HttpPut]
     [Route("post")]
     public async Task<IActionResult> UpdatePosts(int id, [FromBody] PostRequest request)
     {

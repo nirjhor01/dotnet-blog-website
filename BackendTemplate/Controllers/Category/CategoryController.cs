@@ -7,54 +7,64 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BackendTemplate.Controllers.Category
 {
-  [Route("api/category-management")]
-  [ApiController]
-  public class CategoryController : ControllerBase
-  {
-    #region Properties
-    public readonly ICategoryService _categoryService;
-    #endregion Properties
-
-    #region ctor
-    public CategoryController(ICategoryService categoryService)
+    [Route("api/category-management")]
+    [ApiController]
+    public class CategoryController : ControllerBase
     {
-        _categoryService = categoryService;
-    }
-    #endregion ctor
+        #region Properties
+        public readonly ICategoryService _categoryService;
+        #endregion Properties
 
-    #region SAVE
-    [HttpPost]
-    [Route("category")]
-    [Authorize]
-    [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CategoryResponse))]
-    public async Task<IActionResult> AddCategory([FromBody] CategoryRequest categoryRequest)
-    {
-      var res = await _categoryService.AddCategory(categoryRequest, 1);
-      return Ok(res); 
-    }
-    #endregion SAVE
+        #region ctor
+        public CategoryController(ICategoryService categoryService)
+        {
+            _categoryService = categoryService;
+        }
+        #endregion ctor
 
-    #region Update
-    [HttpPut]
-    [Route("category")]
-    [Authorize]
-    public async Task<IActionResult> UpdateCategory([FromBody] CategoryRequest categoryRequest, int id)
-    {
-      var res = await _categoryService.UpdateCategory(categoryRequest, id);
-      return Ok(res);
-    }
+        #region SAVE
+        [HttpPost]
+        [Route("category")]
+        //[Authorize]
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(CategoryResponse))]
+        public async Task<IActionResult> AddCategory([FromBody] CategoryRequest categoryRequest)
+        {
+            var res = await _categoryService.AddCategory(categoryRequest, 1);
+            return Ok(res);
+        }
+        #endregion SAVE
 
-    #endregion Update
+        #region Update
+        [HttpPut]
+        [Route("category")]
+        [Authorize]
+        public async Task<IActionResult> UpdateCategory([FromBody] CategoryRequest categoryRequest, int id)
+        {
+            var res = await _categoryService.UpdateCategory(categoryRequest, id);
+            return Ok(res);
+        }
 
-    #region Delete
-    [HttpDelete]
-    [Route("category")]
-    [Authorize]
-    public async Task<IActionResult> DeleteCategory(int id)
-    {
-      var res = await _categoryService.DeleteCategory(id);
-      return Ok(res);
+        #endregion Update
+
+        #region Delete
+        [HttpDelete]
+        [Route("category")]
+        [Authorize]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            var res = await _categoryService.DeleteCategory(id);
+            return Ok(res);
+        }
+        #endregion Delete
+        [HttpGet]
+        [Route("category")]
+        [Authorize]
+        public async Task<IActionResult> GetCategory(int id)
+        {
+            var res = await _categoryService.GetCategory(id);
+            return Ok(res);
+        }
+
+
     }
-    #endregion Delete
-  }
 }
